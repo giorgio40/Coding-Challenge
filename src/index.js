@@ -9,7 +9,7 @@ import { createStore } from "redux"
 import App from './App';
 
 
- const store = createStore(thunk, logger);
+ const store = createStore(thunk(logger)); 
 
 
 
