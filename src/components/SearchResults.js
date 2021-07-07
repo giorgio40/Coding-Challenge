@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from "react-redux"
 
  function SearchResults(props) {
@@ -10,27 +10,31 @@ import { connect } from "react-redux"
 
 return (
             
-  <div>
-      {search.map((item, id) => (
-<div>
-  <h4 key={id}></h4>
-  <p> {item.title}</p>
-  <p>{item.author}</p>
-  <p>{item.comment_text}</p>
-  <p>{item.story_title}</p>
-  <p>{item.story_url}</p>
-  <p></p>
-   
-</div>
-))}
-</div>   
+  <div>   
+        { useEffect(() => {
+        
+      [search].map((item, id ) =>{
+        
+    <div key={id}>
+    
+      <p> {item.title}</p>
+      <p>{item.author}</p>
+      <p>{item.comment_text}</p>
+      <p>{item.story_title}</p>
+      <p>{item.story_url}</p>
+      
+    </div>
+      })
+
+        },[search] )}
+  </div>   
 )
 }
 
 
 const mapStateToProps = (state) =>{
 return{
-search: state.search
+search: state.text.search
 
 }
 

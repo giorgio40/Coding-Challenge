@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { searchNews, fetchNews } from "../actions/SearchActions";
+import { searchNews, fetchNews } from "../actions/SearchActions"
 import SearchResults from "../components/SearchResults"
 class Search extends React.Component {
 	
