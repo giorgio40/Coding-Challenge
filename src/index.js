@@ -1,28 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 import thunk from "redux-thunk";
-import logger from "redux-logger"
-import { createStore } from "redux"
+import logger from "redux-logger";
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import {reducer} from "./reducer/index";
+import App from "./App";
 
-
-
-import App from './App';
-
-
- const store = createStore(thunk(logger)); 
-
-
-
-
-
-
-
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
-    <App />,
-  document.getElementById('root')
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
