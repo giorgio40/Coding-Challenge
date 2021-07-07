@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { searchNews, fetchNews } from "../actions/SearchActions";
-
+import SearchResults from "../components/SearchResults"
 class Search extends React.Component {
+	
 	handleChange = (e) => {
 		console.log("here");
 
@@ -18,6 +19,7 @@ class Search extends React.Component {
 
 	render() {
 		return (
+			<>
 			<div>
 				<form onSubmit={this.onSubmit}>
 					<input
@@ -31,6 +33,13 @@ class Search extends React.Component {
 					</div>
 				</form>
 			</div>
+
+
+
+			<SearchResults/>
+
+
+			</>
 		);
 	}
 }

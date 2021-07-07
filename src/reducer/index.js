@@ -2,8 +2,7 @@ import { SEARCH_NEWS, FETCH_NEWS } from "../actions/actions";
 
 const initialState = {
 	text: "",
-	search: [],
-	isSearching: false,
+	search: []
 };
 
 export const reducer = (state = initialState, action) => {
@@ -11,14 +10,13 @@ export const reducer = (state = initialState, action) => {
 		case SEARCH_NEWS:
 			return {
 				...state,
-				text: action.payload,
-				isSearching: false,
+				text: action.payload
 			};
 
 		case FETCH_NEWS:
 			return {
 				...state,
-				search: action.payload,
+				search: action.payload
 			};
 
 		default:
