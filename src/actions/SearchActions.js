@@ -15,7 +15,7 @@ export const fetchNews = (text) => (dispatch) => {
 		.then((res) =>
 			dispatch({
 				type: FETCH_NEWS,
-				payload: res.data
+				payload: res.data.hits
 			})
 		)
 		.catch((err) => {
