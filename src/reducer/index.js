@@ -1,4 +1,5 @@
-import { SEARCH_NEWS, FETCH_NEWS } from "../actions/actions";
+
+  import { SEARCH_NEWS, FETCH_NEWS } from "../actions/actions";
 
 const initialState = {
 	text: "",
@@ -23,3 +24,4 @@ export const reducer = (state = initialState, action) => {
 			return state;
 	}
 };
+

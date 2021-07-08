@@ -1,9 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { searchNews, fetchNews } from "../actions/SearchActions";
-import SearchResults from "../components/SearchResults"
+import SearchResults from "../components/SearchResults";
 class Search extends React.Component {
-	
 	handleChange = (e) => {
 		console.log("here");
 
@@ -20,32 +19,28 @@ class Search extends React.Component {
 	render() {
 		return (
 			<>
-			<div>
-				<form onSubmit={this.onSubmit}>
-					<input
-						type="text"
-						placeholder="Search"
-						onChange={this.handleChange}
-					/>
+				<div>
+					<form className="form" onSubmit={this.onSubmit}>
+						<input className="input"
+							type="text"
+							placeholder="Search"
+							onChange={this.handleChange}
+						/>
 
-					<div>
-						<button></button>
-					</div>
-				</form>
-			</div>
+						<div>
+							<button className ="btn">Click Me!</button>
+						</div>
+					</form>
+				</div>
 
-
-
-			<SearchResults/>
-
-
+				<SearchResults />
 			</>
 		);
 	}
 }
 
 const mapStateToProps = (state) => ({
-	text: state.text.search,
+	text: state.text
 });
 
 export default connect(mapStateToProps, { searchNews, fetchNews })(Search);

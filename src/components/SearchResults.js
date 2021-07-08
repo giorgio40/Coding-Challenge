@@ -1,44 +1,22 @@
-import React from 'react'
-import { connect } from "react-redux"
+import React from "react";
+import { connect } from "react-redux";
+import Display from '../components/Display'
+function SearchResults(props) {
+	const { search } = props;
 
- function SearchResults(props) {
-
-
- const { search } = props;
-
-  console.log(props)
-
-return (
-            
-  <div>
-      {search.map((item, id) => (
-<div>
-  <h4 key={id}></h4>
-  <p> {item.title}</p>
-  <p>{item.author}</p>
-  <p>{item.comment_text}</p>
-  <p>{item.story_title}</p>
-  <p>{item.story_url}</p>
-  <p></p>
-   
-</div>
-))}
-</div>   
-)
+	console.log(props);
+	let ele = []
+	return (
+		<div className="container">
+			{search.map((item, id) => (
+				<Display key={id} item={item}/>
+			))}
+		</div>
+	);
 }
 
+const mapStateToProps = (state) => ({
+	search: state.search,
+});
 
-const mapStateToProps = (state) =>{
-return{
-search: state.search
-
-}
-
-
-
-}
-
-
-
-
-export default connect(mapStateToProps,{})(SearchResults)
+export default connect(mapStateToProps, {})(SearchResults);
