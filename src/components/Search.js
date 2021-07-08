@@ -20,15 +20,15 @@ class Search extends React.Component {
 		return (
 			<>
 				<div>
-					<form onSubmit={this.onSubmit}>
-						<input
+					<form className="form" onSubmit={this.onSubmit}>
+						<input className="input"
 							type="text"
 							placeholder="Search"
 							onChange={this.handleChange}
 						/>
 
 						<div>
-							<button></button>
+							<button className ="btn">Click Me!</button>
 						</div>
 					</form>
 				</div>
